@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "My Profile";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="~/assets/site_js/appsettings/my_profile.js"></script>
+
+<div class="breadcrumb-header justify-content-between">
+    <div class="left-content">
+        <h3 class="content-title mb-2"><span class="action_type"></span> My Profile &nbsp;&nbsp; <a href="#" onclick="pinToShortcut('fas fa-user')" class="fa fa-thumbtack text-dark" style="transform: rotate(40deg);" data-toggle="tooltip" title="Pin to Shortcut"></a></h3>
+        <div class="d-flex">
+            <i class="mdi mdi-home text-muted hover-cursor"></i>
+            <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;User&nbsp;/&nbsp;</p>
+            <p class="text-primary mb-0 hover-cursor"><span class="action_type"></span> My Profile</p>
+        </div>
+    </div>
+</div>
+<!-- /breadcrumb -->
+
+<div class="row" id="content_area">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 col-md-6" style="border-bottom:1px solid #edecf7; padding-bottom:10px;">
+        <label class="avatar avatar-lg brround mx-auto" style="float:left;">@Request.Cookies["BillZenOrderProperty"]["thumbnail_name"].ToString()</label>
+        <h4 style="text-align:left;float:left; padding-top:20px; padding-left:20px;">@Request.Cookies["BillZenOrderProperty"]["full_name"].ToString()</h4>
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>
+<div class="row" style="padding-top:10px;">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <p style="font-style:italic">All <span style="font-size:12px !important; color:red;">*</span> Mark fields are Mandatory</p>
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <label class="form-control-label">Full Name <span style="color:#ff0000">*</span></label>
+        <input placeholder="" class="form-control" type="text" id="full_name" value="@Request.Cookies["BillZenOrderProperty"]["full_name"].ToString()">
+        <input type="hidden" id="id">
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>
+<div class="row" style="padding-top:10px;">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-3 col-md-3">
+        <label class="form-control-label">Email </label>
+        <input placeholder="" class="form-control" type="text" id="email" value="@Request.Cookies["BillZenOrderProperty"]["user_email"].ToString()">
+    </div>
+    <div class="col-lg-3 col-md-3">
+        <label class="form-control-label">Mobile </label>
+        <input placeholder="" class="form-control" type="text" id="mobile" value="@Request.Cookies["BillZenOrderProperty"]["user_mobile"].ToString()">
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>
+<div class="row" style="padding-top:10px;">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-3 col-md-3">
+        <label class="form-control-label">Current Password <span style="color:#ff0000">*</span></label>
+        <input placeholder="" class="form-control" type="password" id="current_password">
+    </div>
+    <div class="col-lg-3 col-md-3">
+        <label class="form-control-label">New Password </label>
+        <input placeholder="" class="form-control" type="password" id="new_password">
+        <p style="color:red; font-style:italic">You can leave this field blank if you do not want to change your current password.</p>
+
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>
+
+<div class="row" style="padding-top:10px;">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <button class="btn btn-success btn-rounded" type="button" id="btnSave">Save Profile</button>
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>

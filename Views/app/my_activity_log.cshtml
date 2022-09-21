@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "My Activity Log";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="~/assets/site_js/appsettings/my_activity_log.js"></script>
+<script src="~/assets/json_viewer/dist/jquery.json-editor.min.js"></script>
+<style type="text/css">
+    #json-input {
+        display: block;
+        width: 100%;
+        height: 200px;
+    }
+
+    #json-display {
+        border: 1px solid #000;
+        margin: 0;
+        padding: 10px 20px;
+    }
+</style>
+<div class="breadcrumb-header justify-content-between">
+    <div class="left-content">
+        <h3 class="content-title mb-2"><span class="action_type"></span> My Activity Log &nbsp;&nbsp; <a href="#" onclick="pinToShortcut('fa fa-tasks')" class="fa fa-thumbtack text-dark" style="transform: rotate(40deg);" data-toggle="tooltip" title="Pin to Shortcut"></a></h3>
+        <div class="d-flex">
+            <i class="mdi mdi-home text-muted hover-cursor"></i>
+            <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;My Account&nbsp;/&nbsp;</p>
+            <p class="text-primary mb-0 hover-cursor"><span class="action_type"></span> My Activity Log</p>
+        </div>
+    </div>
+</div>
+<!-- /breadcrumb -->
+<div class="row" id="content_area">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="card overflow-hidden">
+            <div class="card-body" style="background-color: #fbfbfb;">
+                <div class="table-responsive market-values">
+                    <table id="activitylog-table" style="display:none;">
+                        <thead>
+                            <tr>
+                                <th class="no-sort">DATE</th>
+                                <th class="no-sort">OPERATION</th>
+                                <th class="no-sort">INPUT CONTENT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="modal show" id="show-json-item-modal" style="display: none; padding-right: 4px; " aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">Input Content</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body" id="save-item-modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">Action : <span id="lbl_action_title" style="color:red;"></span></label>
+                    </div>
+                    <div class="col-lg-12 col-md-12" style="margin-top:10px;">
+                        <pre id="json_action_content"></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-secondary btn-rounded" data-dismiss="modal" type="button" id="btnClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

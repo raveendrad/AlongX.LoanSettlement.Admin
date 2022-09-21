@@ -1,0 +1,4 @@
+﻿ItemName,ItemImage,CategoryName,CategoryImage,SubCategoryName,SubCategoryImage,Description,IsVeg,Unit,Rate,AvailableStockQuantity
+Odiya Namkeen,itemimage.jpg,NAMKEEN,catimage.jpg,Odia,subcatimage.jpg,Odiya Namkeen,TRUE,Pks.-Packs,100,111
+Telugu Namkeen,itemimage.jpg,NAMKEEN,catimage.jpg,Telugu,subcatimage.jpg,Telugu Namkeen,TRUE,Pks.-Packs,100,111
+Mashroom Masala,itemimage.jpg,SOUTH INDIAN SPECIAL,catimage.jpg,Telangana Special,subcatimage.jpg,Mashroom Masala,TRUE,Pks.-Packs,100,190

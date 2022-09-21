@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="@Request.Cookies["BillZenOrderProperty"]["app_name"].ToString()">
+    <meta name="Author" content="@Request.Cookies["BillZenOrderProperty"]["vendor"].ToString()">
+    <meta name="Keywords" content="Micro Ordering App for Smart Business. Cloud integrated fully-automated App to seamlessly, effectively, and efficiently manage mobile ordering system." />
+
+    <!-- Title -->
+    <title>@Request.Cookies["BillZenOrderProperty"]["app_name"].ToString() - Subscription Expired ! </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/assets/img/brand/favicon.png" type="image/x-icon" />
+
+    <!-- Icons css -->
+    <link href="/assets/plugins/icons/icons.css" rel="stylesheet">
+
+    <!---Fontawesome css-->
+    <link href="/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!---Ionicons css-->
+    <link href="/assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!---Typicons css-->
+    <link href="/assets/plugins/typicons.font/typicons.css" rel="stylesheet">
+
+    <!---Feather css-->
+    <link href="/assets/plugins/feather/feather.css" rel="stylesheet">
+
+    <!---Falg-icons css-->
+    <link href="/assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+
+
+    <!---Style css-->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style-dark.css" rel="stylesheet">
+
+    <!-- skin css-->
+    <link href="/assets/css/skin-modes.css" rel="stylesheet">
+
+    <!--- Animations css-->
+    <link href="/assets/css/animate.css" rel="stylesheet">
+
+    <!-- Switcher css -->
+    <link href="/assets/switcher/css/switcher.css" rel="stylesheet">
+    <link rel="/stylesheet" href="assets/switcher/demo.css">
+
+
+</head>
+<body class="main-body">
+
+    <!-- Loader -->
+    <div id="global-loader" class="light-loader">
+        <img src="/assets/img/loaders/loader.svg" class="loader-img" alt="Loader">
+    </div>
+    <!-- /Loader -->
+    <!-- main-signin-wrapper -->
+    <div class="my-auto page page-h">
+        <div class="main-signin-wrapper">
+            <div class="main-card-signin d-md-flex wd-100p">
+                <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white">
+                    <div class="my-auto authentication-pages">
+                        <div>
+                            <img src="~/assets/img/brand/billzen-logo.png" style="width:150px;" class=" m-0 mb-4" alt="logo">
+                            <h5 class="mb-4">Micro Ordering App for Smart Business</h5>
+                            <p class="mb-5"> Cloud integrated fully-automated App to seamlessly, effectively, and efficiently manage mobile ordering system.</p>
+                            <a href="@Request.Cookies["BillZenOrderProperty"]["app_website"].ToString()" target="_blank" class="btn btn-danger">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 wd-md-50p">
+                    <div class="main-signin-header">
+                        <h2>Subscription Expired!</h2>
+                        <div class="form-group">
+                            <img src="~/assets/img/app_expired.jpg" />
+                        </div>
+                        <div class="form-group">
+                            <label style="color:red; text-align:center;">
+                                @TempData["FailedMessage"]
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label style=" text-align:center;">
+                                <a href="@Request.Cookies["BillZenOrderProperty"]["help_url"].ToString()" target="_blank" class="btn btn-danger">Contact Product Owner</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-footer ht-40" style="margin-top: 50px !important;position: fixed;bottom: 0px;left: 0px;right: 0px;">
+        <div class="container-fluid pd-t-0-f ht-100p">
+            <span>Copyright © @DateTime.Now.Year <a href="@Request.Cookies["BillZenOrderProperty"]["app_website"].ToString()">@Request.Cookies["BillZenOrderProperty"]["app_name"].ToString()</a> @Request.Cookies["BillZenOrderProperty"]["app_version"].ToString(). Designed by <a href="@Request.Cookies["BillZenOrderProperty"]["vendor_website"].ToString()">@Request.Cookies["BillZenOrderProperty"]["vendor"].ToString()</a> All rights reserved.</span>
+        </div>
+    </div>
+    <!-- /main-signin-wrapper -->
+    <!-- JQuery min js -->
+    <script src="/assets/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Bundle js -->
+    <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Ionicons js -->
+    <script src="/assets/plugins/ionicons/ionicons.js"></script>
+
+    <!-- Moment js -->
+    <script src="/assets/plugins/moment/moment.js"></script>
+
+    <!-- eva-icons js -->
+    <script src="/assets/js/eva-icons.min.js"></script>
+
+    <!-- Rating js-->
+    <script src="/assets/plugins/rating/jquery.rating-stars.js"></script>
+    <script src="/assets/plugins/rating/jquery.barrating.js"></script>
+
+
+    <!-- Custom js -->
+    <script src="/assets/js/custom.js"></script>
+
+    <!-- Switcher js -->
+    <script src="/assets/switcher/js/switcher.js"></script>
+
+</body>
+</html>

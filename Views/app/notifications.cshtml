@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Notifications";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="~/assets/site_js/appsettings/notifications.js"></script>
+<div class="breadcrumb-header justify-content-between">
+    <div class="left-content">
+        <h3 class="content-title mb-2"><span class="action_type"></span> Notifications &nbsp;&nbsp; <a href="#" onclick="pinToShortcut('fa fa-bell')" class="fa fa-thumbtack text-dark" style="transform: rotate(40deg);" data-toggle="tooltip" title="Pin to Shortcut"></a></h3>
+        <div class="d-flex">
+            <i class="mdi mdi-home text-muted hover-cursor"></i>
+            <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;User&nbsp;/&nbsp;</p>
+            <p class="text-primary mb-0 hover-cursor"><span class="action_type"></span> Notifications</p>
+        </div>
+    </div>
+</div>
+<!-- /breadcrumb -->
+
+<div class="row" id="content_area">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="col-lg-12 col-md-12" style="background-color:#fbfbfb; min-height:50px;" id="notification_list">
+
+        </div>
+    </div>
+    <div class="col-lg-3">
+    </div>
+</div>
+
+<div id="template_notification" style="display:none;">
+    <div class="list d-flex align-items-center border-bottom p-2 pl-3 pr-3">
+        <span class="w-6 h-6"><i class="fa fa-bell text-warning" style="font-size:20px; padding-top: 10px;"></i></span>
+        <div class="w-100 ml-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="mt-1 mb-0 font-weight-bold">{{message}}</p>
+                {{is_important}}
+                @*<span class="fa fa-exclamation-triangle text-danger tx-13"></span>*@
+            </div>
+            {{date}}
+        </div>
+    </div>
+</div>

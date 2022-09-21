@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Unauthorized Action";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row" id="form_container" style="margin-top:100px;">
+    <div class="col-md-1">
+    </div>
+
+    <div class="col-md-4">
+        <div class="card overflow-hidden">
+            <div class="card-body" style="background-color:#fbfbfb">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12" style="text-align:center;">
+                        <h4 class="text-danger">Access Denied !</h4>
+                    </div>
+                    <div class="col-lg-12 col-md-12" style="text-align:center;">
+                        <h6 style="line-height:1.6">
+                            We are sorry to inform you that you don't have permission to access <span class="text-danger" style="font-weight:bold;text-transform:uppercase;">@ViewBag.Operation</span> feature.
+                            Well, you can access others features of this console as per the permission given to you. <br />
+                            Incase you need more permission on this console, please contact your administrator.
+                        </h6>
+                    </div>
+                    <div class="col-lg-12 col-md-12" style="text-align:center;">
+                        <hr />
+                        <p class="font-weight-bold">Your Current Permission : <span class="text-success ">@Request.Cookies["BillZenOrderProperty"]["role_name"].ToString()</span></p>
+                        <p><b>What can you operate ? </b>: @Request.Cookies["BillZenOrderProperty"]["role_description"].ToString()</p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <img src="~/assets/img/unautorized_access.gif" />
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>

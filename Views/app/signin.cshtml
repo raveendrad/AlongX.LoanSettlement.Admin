@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_name"].ToString()">
+    <meta name="Author" content="@Request.Cookies["BillZenOrderPropertyAppInfo"]["vendor"].ToString()">
+    <meta name="Keywords" content="Micro Ordering App for Smart Business. Cloud integrated fully-automated App to seamlessly, effectively, and efficiently manage mobile ordering system." />
+    <title>@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_name"].ToString() - Micro Ordering App</title>
+    <link rel="icon" href="~/assets/img/brand/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="~/assets/signin/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/signin/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/signin/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/signin/iofrm-theme4.css">
+</head>
+<body>
+    <div class="form-body">
+        <div class="website-logo">
+            <div class="logo">
+                <img class="logo-size" src="~/assets/img/lock_image.png" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <img class="logo-size" src="~/assets/img/lock_image.png" style="width:100px;" />
+                <h4>
+                    Micro Ordering App for Smart Business
+                </h4>
+                <h6>
+                    Cloud integrated fully-automated App to seamlessly, <br />effectively, and efficiently manage mobile ordering system.
+                </h6>
+                <img src="~/assets/img/login_page_image2.png" style="position: absolute; bottom: 0px; left: 0px; width:100%;" />
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>One Console for Everything</h3>
+                        <p>Access your portal through our powerfull and secured two layered password protection mechanism.</p>
+                        <div class="page-links">
+                            <a href="#" class="active">Welcome back !</a>
+                        </div>
+
+                        @using (Html.BeginForm("authenticate", "app", FormMethod.Post))
+                        {
+                            <input class="form-control" type="text" placeholder="Enter your Login Id" name="login_id" id="login_id" required="">
+                            <input class="form-control" placeholder="Enter your password" name="password" id="password" type="password" required="">
+                            <input class="form-control" type="checkbox" name="remember_me" id="remember_me"  value="true" style="margin-top:5px !important;"><span>&nbsp;&nbsp;&nbsp;&nbsp;Remember me</span>
+
+                                            <p style="color:red;">
+                                                @TempData["FailedMessage"]
+                                            </p>
+                                                            <div class="form-button">
+                                                                <button id="submit" type="submit" class="ibtn">Sign In</button>
+                                                                <span></span><a href="@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_website"].ToString()" target="_blank">Create a new Account</a>
+                                                            </div>}
+
+                        <div class="other-links">
+                            <span>
+                                Copyright © 2021 - @DateTime.Now.Year <a href="@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_website"].ToString()" target="_blank">@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_name"].ToString()</a>@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_version"].ToString().
+                                All rights reserved.
+                                <br />A Product of <a href="@Request.Cookies["BillZenOrderPropertyAppInfo"]["vendor_website"].ToString()" target="_blank">@Request.Cookies["BillZenOrderPropertyAppInfo"]["vendor"].ToString()</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/assets/signin/jquery.min.js.download"></script>
+    <script src="~/assets/signin/popper.min.js.download"></script>
+    <script src="~/assets/signin/bootstrap.min.js.download"></script>
+    <script src="~/assets/signin/main.js.download"></script>
+</body>
+</html>
