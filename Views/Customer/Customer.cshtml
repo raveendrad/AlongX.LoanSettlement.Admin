@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<script src="~/assets/site_js/Customer/Customer.js"></script>
+
+<!-- breadcrumb -->
+<div class="breadcrumb-header justify-content-between">
+    <div class="left-content">
+        <h3 class="content-title mb-2">Customer &nbsp;&nbsp; <a href="#" onclick="pinToShortcut('fas fa-store')" class="fa fa-thumbtack text-dark" style="transform: rotate(40deg);" data-toggle="tooltip" title="Pin to Shortcut"></a></h3>
+        <div class="d-flex">
+            <i class="mdi mdi-home text-muted hover-cursor"></i>
+            <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Customer&nbsp;/&nbsp;</p>
+            <p class="text-primary mb-0 hover-cursor"></p>
+        </div>
+    </div>
+    <div class="d-flex align-items-end flex-wrap my-auto right-content breadcrumb-right">
+        <p id="applied_filter_range_shower" style="margin-bottom: 0.2rem !important; padding-right:10px;"></p>
+        <button class="btn btn-success btn-rounded btn-sm" onclick="resetSaveItemFields()" data-target="#save-item-modal" data-toggle="modal"> <i class="mdi mdi-plus icon_bold"></i>New Customer</button>
+    </div>
+</div>
+<!-- /breadcrumb -->
+
+<div class="row" id="content_area">
+    <div class="col-md-12">
+        <div class="card overflow-hidden">
+            <div class="card-body" style="background-color: #fbfbfb;">
+                <div class="table-responsive market-values">
+                    <table id="customer_table">
+                        <thead>
+                            <tr>
+                                <th class="no-sort" width="10%">NAME</th>
+                                <th class="no-sort" width="10%">GENDER</th>
+                                <th class="no-sort" width="10%">MOBILE_NUMBER</th>
+                                <th class="no-sort" width="20%">ADDRESS</th>
+                                <th class="no-sort" width="10%">OCCUPATION</th>
+                                <th class="no-sort" width="10%">STATE</th>
+                                <th class="no-sort" width="10%">EARNING_PER_MONTH</th>
+                               <th class="no-sort" width="10%">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal show" id="save-item-modal" style="display: none; padding-right: 4px; " aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">Customer</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body" id="save-item-modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label"> Name <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="name">
+                        <input type="hidden" id="id">
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">GENDER <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="locality">
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">Full Address <span style="color:#ff0000">*</span></label>
+                        <textarea class="form-control" placeholder="" id="full_address"></textarea>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">Manager <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="manager">
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">Contact Number <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="contact_number">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn ripple btn-success btn-rounded" type="button" id="btnSave">Save</button>
+                <button class="btn btn-outline-secondary btn-rounded" data-dismiss="modal" type="button" id="btnClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Company Profile";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="~/assets/site_js/appsettings/company_profile.js"></script>
+
+<div class="breadcrumb-header justify-content-between">
+    <div class="left-content">
+        <h3 class="content-title mb-2"><span class="action_type"></span> Manage My Company Profile &nbsp;&nbsp; <a href="#" onclick="pinToShortcut('fas fa-cogs')" class="fa fa-thumbtack text-dark" style="transform: rotate(40deg);" data-toggle="tooltip" title="Pin to Shortcut"></a></h3>
+        <div class="d-flex">
+            <i class="mdi mdi-home text-muted hover-cursor"></i>
+            <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Application Settings&nbsp;/&nbsp;</p>
+            <p class="text-primary mb-0 hover-cursor"><span class="action_type"></span> Company Profile</p>
+        </div>
+    </div>
+</div>
+<!-- /breadcrumb -->
+@using (Html.BeginForm("SaveCompanyProfile", "appsettings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="row" id="content_area">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6" style="border-bottom:1px solid #edecf7; padding-bottom:10px;">
+            <img src="~/assets/img/brand/billzen-logo-transparent.jpg" style="width: 125px; float: left; cursor:pointer; border:1px solid #cdcdcd" id="imgLogoView" />
+            <h4 style="text-align:left;float:left; padding-top:20px; padding-left:20px;" id="lblbusiness_name"></h4>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <p style="font-style:italic">All <span style="font-size:12px !important; color:red;">*</span> Mark fields are Mandatory</p>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            @{
+                DBResponse response = (DBResponse)TempData["CallBackPacket-CompanyProfile"];
+                if (response != null)
+                {
+                    if (response.status)
+                    {
+                        <label type="text" style="color:green;">@response.message</label>
+                    }
+                    else
+                    {
+                        <label type="text" style="color:red;">@response.message</label>
+                    }
+                }
+                else
+                {
+                    <label type="text"></label>
+                }
+            }
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Logo</label>
+            <input placeholder="" class="form-control" type="file" id="logo_image" name="logo_image" style="height:40px;">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Business Name <span style="color:#ff0000">*</span></label>
+            <input placeholder="" class="form-control" type="text" id="business_name" name="name">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Contact Name </label>
+            <input placeholder="" type="hidden" id="organizationId" name="organizationId">
+            <input placeholder="" class="form-control" type="text" id="ContactName" name="ContactName">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Phone Number </label>
+            <input placeholder="" class="form-control" type="text" id="PhoneNumber" name="PhoneNumber">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Email Address </label>
+            <input placeholder="" class="form-control" type="text" id="EmailAddress" name="EmailAddress">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Location </label>
+            <input placeholder="" class="form-control" type="text" id="Location" name="Location">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">GSTIN Number </label>
+            <input placeholder="" class="form-control" type="text" id="GSTINNumber" name="GSTINNumber">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <label class="form-control-label">Organization Type </label>
+            <input placeholder="" class="form-control" type="text" id="OrgType" name="OrgType">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <label class="form-control-label">Open Time </label>
+            <input placeholder="" class="form-control" type="text" id="OpenTime" name="OpenTime">
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <label class="form-control-label">Close Time </label>
+            <input placeholder="" class="form-control" type="text" id="CloseTime" name="CloseTime">
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row" style="padding-top:10px;">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <button class="btn btn-success btn-rounded" type="submit">Save Profile</button>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+}

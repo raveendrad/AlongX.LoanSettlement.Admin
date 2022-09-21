@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web;
 
-namespace BillZen.Order.Admin
+namespace AlongX.LoanSettlement.Admin.Helper
 {
-    public static class StringFormatter
+    public class StringFormatter
     {
         public static string Base64Encode(string plainText)
         {
@@ -42,5 +45,5 @@ namespace BillZen.Order.Admin
             return cipherText;
         }
     }
-    
+
 }

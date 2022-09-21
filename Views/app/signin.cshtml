@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_name"].ToString()">
-    <meta name="Author" content="@Request.Cookies["BillZenOrderPropertyAppInfo"]["vendor"].ToString()">
+    <meta name="Description" content="@Request.Cookies["AlongXLoanPropertyAppInfo"]["app_name"].ToString()">
+    <meta name="Author" content="@Request.Cookies["AlongXLoanPropertyAppInfo"]["vendor"].ToString()">
     <meta name="Keywords" content="Micro Ordering App for Smart Business. Cloud integrated fully-automated App to seamlessly, effectively, and efficiently manage mobile ordering system." />
-    <title>@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_name"].ToString() - Micro Ordering App</title>
+    <title>@Request.Cookies["AlongXLoanPropertyAppInfo"]["app_name"].ToString() - Micro Ordering App</title>
     <link rel="icon" href="~/assets/img/brand/favicon.png" type="image/x-icon" />
 
     <link rel="stylesheet" type="text/css" href="~/assets/signin/bootstrap.min.css">
@@ -47,21 +47,21 @@
                         {
                             <input class="form-control" type="text" placeholder="Enter your Login Id" name="login_id" id="login_id" required="">
                             <input class="form-control" placeholder="Enter your password" name="password" id="password" type="password" required="">
-                            <input class="form-control" type="checkbox" name="remember_me" id="remember_me"  value="true" style="margin-top:5px !important;"><span>&nbsp;&nbsp;&nbsp;&nbsp;Remember me</span>
+                            <input class="form-control" type="checkbox" name="remember_me" id="remember_me" value="true" style="margin-top:5px !important;"><span>&nbsp;&nbsp;&nbsp;&nbsp;Remember me</span>
 
-                                            <p style="color:red;">
-                                                @TempData["FailedMessage"]
-                                            </p>
-                                                            <div class="form-button">
-                                                                <button id="submit" type="submit" class="ibtn">Sign In</button>
-                                                                <span></span><a href="@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_website"].ToString()" target="_blank">Create a new Account</a>
-                                                            </div>}
+                            <p style="color:red;">
+                                @TempData["FailedMessage"]
+                            </p>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Sign In</button>
+                                <span></span><a href="@Request.Cookies["AlongXLoanPropertyAppInfo"]["app_website"].ToString()" target="_blank">Create a new Account</a>
+                            </div>}
 
                         <div class="other-links">
                             <span>
-                                Copyright © 2021 - @DateTime.Now.Year <a href="@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_website"].ToString()" target="_blank">@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_name"].ToString()</a>@Request.Cookies["BillZenOrderPropertyAppInfo"]["app_version"].ToString().
+                                Copyright © 2021 - @DateTime.Now.Year <a href="@Request.Cookies["AlongXLoanPropertyAppInfo"]["app_website"].ToString()" target="_blank">@Request.Cookies["AlongXLoanPropertyAppInfo"]["app_name"].ToString()</a>@Request.Cookies["AlongXLoanPropertyAppInfo"]["app_version"].ToString().
                                 All rights reserved.
-                                <br />A Product of <a href="@Request.Cookies["BillZenOrderPropertyAppInfo"]["vendor_website"].ToString()" target="_blank">@Request.Cookies["BillZenOrderPropertyAppInfo"]["vendor"].ToString()</a>
+                                <br />A Product of <a href="@Request.Cookies["AlongXLoanPropertyAppInfo"]["vendor_website"].ToString()" target="_blank">@Request.Cookies["AlongXLoanPropertyAppInfo"]["vendor"].ToString()</a>
                             </span>
                         </div>
                     </div>

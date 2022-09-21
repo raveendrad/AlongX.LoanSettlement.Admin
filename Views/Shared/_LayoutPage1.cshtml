@@ -1,0 +1,471 @@
+﻿@using AlongX.LoanSettlement.Admin
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="Description" content="">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="Operating Sales" />-->
+
+<title> @ViewBag.Title</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/img/brand/favicon.png" type="image/x-icon" />
+
+    <!-- Icons css -->
+    <link href="/assets/plugins/icons/icons.css" rel="stylesheet">
+
+    <!--  Right-sidemenu css -->
+    <link href="/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+    <!--  Custom Scroll bar-->
+    <link href="/assets/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <!--- Animations css-->
+    <link href="/assets/css/animate.css" rel="stylesheet">
+
+
+    <!-- Internal Chart-Morris css-->
+    <link href="/assets/plugins/morris.js/morris.css" rel="stylesheet">
+
+    <!-- Internal Nice-select css  -->
+    <link href="/assets/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
+
+    <!-- Internal News-Ticker css-->
+    <link href="/assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+
+    <!-- Jquery-countdown css-->
+    <link href="/assets/plugins/jquery-countdown/countdown.css" rel="stylesheet">
+
+    <!-- Internal News-Ticker css-->
+    <link href="/assets/plugins/newsticker/jquery.jConveyorTicker.css" rel="stylesheet" />
+
+
+    <!-- style css-->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- skin css-->
+    <link href="/assets/css/skin-modes.css" rel="stylesheet">
+
+    <!-- dark-theme css-->
+    <link href="/assets/css/style-dark.css" rel="stylesheet">
+
+    <!-- Switcher css -->
+    <link href="/assets/switcher/css/switcher.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/switcher/demo.css">
+
+    <link href="~/assets/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/assets/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+    <link href="~/assets/waitMe/waitMe.css" rel="stylesheet" />
+
+    <link href="~/assets/notification/jquery.cosyAlert.css" rel="stylesheet" />
+    <link href="~/assets/css/jquery-confirm.min.css" rel="stylesheet" />
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/assets/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets/js/jszip.min.js"></script>
+    <script src="~/assets/js/pdfmake.min.js"></script>
+    <script src="~/assets/js/vfs_fonts.js"></script>
+    <script src="~/assets/js/buttons.html5.min.js"></script>
+
+    <script src="~/assets/waitMe/waitMe.js"></script>
+
+    <script src="~/assets/notification/jquery.cosyAlert.js"></script>
+    <script src="~/assets/js/jquery-confirm.min.js"></script>
+
+    <script src="~/assets/site_js/common-components.js"></script>
+</head>
+<body class="main-body app sidebar-mini Light-mode @*horizontal-theme*@">
+
+    <!-- Loader -->
+    <div id="global-loader" class="light-loader">
+        <img src="/assets/img/loaders/loader.svg" class="loader-img" alt="Loader">
+    </div>
+    <!-- /Loader -->
+    <!-- Page -->
+    <div class="page">
+        <!-- main-header -->
+        <div class="main-header nav nav-item hor-header">
+            <div class="container">
+                <div class="main-header-left ">
+                    <a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a><!-- sidebar-toggle-->
+                    <a class="header-brand" href="~/app/dashboard">
+                        <img src="/assets/img/brand/alongx-logo-web.jpg" class="desktop-dark">
+                        <img src="/assets/img/brand/alongx-logo-web.jpg" class="desktop-logo" alt="billzen logo">
+                    </a>
+                   @* <span class="product_label"><span>O</span>rder</span>*@
+                </div>
+                <div class="main-header-center">
+                    <div class="responsive-logo">
+                        <img src="~/assets/img/brand/alongx-logo-web.jpg" class="mobile-logo" alt="billzen logo">
+                        <img src="~/assets/img/brand/alongx-logo-web.jpg" class="dark-mobile-logo" alt="billzen logo">
+                    </div>
+                    <div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
+                        <h5 style="text-align:right; color:#fbfbfb; font-weight:bold; padding-top:7px;">xyz</h5>
+                    </div>
+                </div>
+                <div class="main-header-right">
+                    <div class="nav nav-item  navbar-nav-right ml-auto">
+                        <form class="navbar-form nav-item my-auto d-lg-none" role="search">
+                            <div class="input-group nav-item my-auto">
+                                @*<input type="text" class="form-control" placeholder="Search">*@
+                                <span class="input-group-btn">
+                                    <button type="reset" class="btn btn-default">
+                                        <i class="ti-close"></i>
+                                    </button>
+                                    <button type="submit" class="btn btn-default nav-link">
+                                        <i class="ti-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                        <div class="nav-item full-screen fullscreen-button">
+                            <a class="new nav-link full-screen-link" href="#"><i class="ti-fullscreen"></i></a>
+                        </div>
+                        @*<div class="dropdown  nav-item main-header-message ">
+                                <a class="new nav-link" href="#" data-target="#report_filter_area_modal" data-toggle="modal"><i class="ti-filter"></i><span class="pulse-danger"></span></a>
+                            </div>*@
+                        <div class="nav-item main-header-message ">
+                            <a class="new nav-link " href="#" target="_blank"><i class="ti-help"></i></a>
+                        </div>
+                        <div class="nav-item main-header-notification">
+                            <a class="new nav-link " href="~/app/notifications"><i class="ti-bell animated bell-animations"></i><span class=" pulse"></span></a>
+
+                        </div>
+                        <button class="navbar-toggler navresponsive-toggler d-sm-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+                                aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon fe fe-more-vertical "></span>
+                        </button>
+                        <div class="dropdown main-profile-menu nav nav-item nav-link" style="margin-top:3px;">
+                            <a class="profile-user" href="#">
+                                <div class="avatar avatar-sm brround mx-auto bg-primary" style="color:#fbfbfb">xyz</div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
+                                <div class="main-header-profile header-img">
+                                    <div class="main-img-user avatar avatar-lg brround mx-auto bg-dark">jjj</div>
+                                    <h6>xvg</h6>
+                                    <span>jji</span>
+                                    <span style="font-style:italic">login timre</span>
+                                </div>
+                                <a class="dropdown-item" href="~/app/my_profile"><i class="far fa-user"></i> My Profile</a>
+                                <a class="dropdown-item" href="~/app/my_activity_log"><i class="far fa-clock"></i> My Activity Logs</a>
+                                <a class="dropdown-item" href="#" onclick="signout()"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                            </div>
+                        </div>
+                        <div class="dropdown main-header-message right-toggle">
+                            <a class="nav-link " data-toggle="sidebar-right" data-target=".sidebar-right">
+                                <i class="ti-menu tx-20 bg-transparent"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /main-header -->
+        <!-- mobile-header -->
+        <div class="responsive main-header">
+            <div class="mb-1 navbar navbar-expand-lg  nav nav-item  navbar-nav-right responsive-navbar navbar-dark d-sm-none ">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                    <div class="d-flex order-lg-2 ml-auto">
+                        <form class="navbar-form nav-item my-auto d-lg-none" role="search">
+                            <div class="input-group nav-item my-auto">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button type="reset" class="btn btn-default">
+                                        <i class="ti-close"></i>
+                                    </button>
+                                    <button type="submit" class="btn btn-default nav-link">
+                                        <i class="ti-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                        <div class="d-md-flex">
+                            <div class="nav-item full-screen fullscreen-button">
+                                <a class="new nav-link full-screen-link" href="#"><i class="ti-fullscreen"></i></a>
+                            </div>
+                        </div>
+                        <div class="dropdown  nav-item main-header-message header-contact">
+                            <a class="new nav-link" href="#" data-target="#report_filter_area_modal" data-toggle="modal"><i class="ti-filter"></i><span class="pulse-danger"></span></a>
+                        </div>
+                        <div class="dropdown nav-item main-header-notification">
+                            <a href="#" target="_blank"><i class="ti-help"></i></a>
+                        </div>
+                        <div class="dropdown main-profile-menu nav nav-item nav-link">
+                            <a class="profile-user" href="#"><img alt="" src="/assets/img/faces/5.jpg"></a>
+                            <div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
+                                <div class="main-header-profile header-img">
+                                    <div class="main-img-user"><img alt="" src="/assets/img/faces/5.jpg"></div>
+                                    <h6>
+                                        3333
+                                    </h6>
+                                    <span>jkhh</span>
+                                    <p>Last Login -</p>
+                                </div>
+                                <a class="dropdown-item" href="~/app/my_profile"><i class="far fa-user"></i> My Profile</a>
+                                <a class="dropdown-item" href="~/app/my_activity_log"><i class="far fa-clock"></i> Activity Logs</a>
+                                <a class="dropdown-item" href="~/app/signout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                            </div>
+                        </div>
+                        <div class="dropdown main-header-message right-toggle">
+                            <a class="nav-link " data-toggle="sidebar-right" data-target=".sidebar-right">
+                                <i class="ti-menu tx-20 bg-transparent"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile-header -->
+        <!--Horizontal-main -->
+        <div class="sticky">
+            <div class="horizontal-main hor-menu clearfix side-header">
+                <div class="horizontal-mainwrapper container clearfix">
+                    <!--Nav-->
+                    <nav class="horizontalMenu clearfix">
+                        <ul class="horizontalMenu-list">
+                            <li aria-haspopup="false"><a href="~/app/dashboard" class=""><i class="fa fa-home" style="margin-right:0px !important"></i></a></li>
+                            <!--<li aria-haspopup="true">
+                                <a href="#" class="sub-icon"><i class="fa fa-cogs"></i> App Settings <i class="fe fe-chevron-down horizontal-icon"></i></a>
+                                <ul class="sub-menu">-->
+                                    @*<li aria-haspopup="true"><a href="~/appsettings/categories" class="slide-item">Categories</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/subcategories" class="slide-item">Sub-Categories</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/items" class="slide-item">Items</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/banners" class="slide-item">Banners</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/delivery_charges" class="slide-item">Delivery Charges</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/users_and_roles" class="slide-item">Users & Roles</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/company_profile" class="slide-item">Company Profile</a></li>
+                                    <li aria-haspopup="true"><a href="~/appsettings/activity_log" class="slide-item">Activity Logs</a></li>*@
+                                <!--</ul>
+                            </li>-->
+                            @*<li aria-haspopup="true">
+                                <a href="#" class="sub-icon"><i class="fa fa-shopping-cart"></i> Orders <i class="fe fe-chevron-down horizontal-icon"></i></a>
+                                <ul class="sub-menu">
+                                    <li aria-haspopup="true"><a href="~/orders/orders" class="slide-item">Orders</a></li>
+                                    <li aria-haspopup="true"><a href="~/customers/customer_record" class="slide-item">Customers</a></li>
+
+                                </ul>
+                            </li>*@
+                            <li>
+                                <a class="sub-icon" href="~/Customer/Customer"><i class="fa fa-gift"></i> Customers </a>
+                            </li>
+                           @*<li>
+                                <a class="sub-icon" href="~/reports/report_and_analytics"><i class="fa fa-chart-bar"></i> Reports & Analytics </a>
+                                <ul class="sub-menu">
+                                    <li aria-haspopup="true"><a href="~/CustomerReports/CustomerReports" class="slide-item">CustomerReports</a></li>
+                                    <li aria-haspopup="true"><a href="~/OrderReports/OrderReports" class="slide-item">OrderReports</a></li>
+                                </ul>
+                            </li>*@
+                        </ul>
+                    </nav>
+                    <!--Nav-->
+                </div>
+            </div>
+        </div>
+        <!--Horizontal-main -->
+        <!-- main-content opened -->
+        <div class="main-content horizontal-content">
+            <!-- container -->
+            <div class="container">
+
+                <div class="alert alert-danger mb-0" role="alert" id="mandatory_action_alert" style="display:none;">
+                    <h4 class="alert-heading">Incomplete Setup. Action Required !</h4>
+                    <p>
+                        You subscription account is NOT configured with few mandaroty actions. You must complete them before performing any other actions.
+                        Please find the following actions that you need to perform step by step.
+                        (<span class="fa fa-check-circle text-success"></span>) marked steps are completed. (<span class="fa fa-times-circle"></span>) marked steps are required to complete.
+                    </p>
+                    <hr>
+                    <div class="mb-0" id="mandatory_action_holder">
+                        @*<p><span class="fa fa-times-circle"></span>   Step #1 - No <b>Raw Material</b> added yet. <a href="#">Add a Raw Material</a>.</p>
+                            <p class="text-success"><span class="fa fa-check-circle"></span>   Step #1 - No <b>Raw Material</b> added yet.</p>*@
+
+                    </div>
+                </div>
+
+                @RenderBody()
+
+
+
+            </div>
+            <!-- Container closed -->
+            <div class="container">
+                <div style="height:100px;"></div>
+            </div>
+        </div>
+
+        <!-- main-content closed -->
+        <!-- Right-sidebar-->
+        <!--<div class="sidebar sidebar-right sidebar-animate" id="sidebar_container" style="width:450px;">
+            <div class="p-3">-->
+                @*<a href="#" class="text-right float-right" data-toggle="sidebar-right" data-target=".sidebar-right"><i class="fe fe-x"></i></a>*@
+            <!--</div>
+            <div class="tab-menu-heading border-0 card-header">
+                <div class="card-title mb-0">Pinned Shortcuts</div>
+                <div class="card-options ml-auto">
+                    <a href="#" class="sidebar-remove"><i class="fe fe-x"></i></a>
+                </div>
+            </div>-->
+
+            @*<div class="panel-body tabs-menu-body side-tab-body p-0 border-0 ">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab">
+                        <div class="card-body p-0">
+                            <div class="header-user text-center mt-4">
+                                <span class="avatar avatar-xl brround mx-auto">
+                                   
+                                </span>
+                                <div class=" text-center font-weight-semibold user mt-3 h6 mb-0"></div>
+                                <span class="text-muted"></span>
+                                <br />
+                                <span style="font-style:italic"></span>
+                            </div>
+                            <div class="dropdown-item border-top" style="min-height:50px;" id="pinned_shortcut_container_loader">
+                            </div>
+                            <div class="row" style="padding:20px; padding-top:2px !important;" id="pinned_shortcut_container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <!--</div>-->
+        <!-- Right-sidebar-closed -->
+        <!--Start Report Filter Area -->
+        <div class="modal show" id="report_filter_area_modal" style="display: none; padding-right: 4px; " aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content modal-content-demo">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Filter Set</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body" id="report_filter_area_modal_body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <label class="form-label float-left form-control-label">START DATE <span style="color:#ff0000">*</span></label>
+                                <input type="hidden" id="hfStartDateFilter" value="" />
+                                <input class="form-control" type="datetime-local" id="ranger_start_date">
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <label class="form-label float-left form-control-label">END DATE <span style="color:#ff0000">*</span></label>
+                                <input type="hidden" id="hfEndDateFilter" value="" />
+                                <input class="form-control" type="datetime-local" id="ranger_end_date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn ripple btn-success btn-rounded" type="button" data-dismiss="modal" onclick="applyFilterSet()">Apply</button>
+                        <button class="btn btn-outline-secondary btn-rounded" data-dismiss="modal" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Report Filter Area -->
+        <!-- Footer opened -->
+
+        <div class="main-footer ht-40" style="margin-top: 50px !important;position: fixed;bottom: 0px;left: 0px;right: 0px;">
+            <div class="container-fluid pd-t-0-f ht-100p">
+                <span>Copyright © 2021 - @DateTime.Now.Year <a href="#"></a> All rights reserved. A Product of <a href="#" target="_blank">hhj</a></span>
+            </div>
+        </div>
+        <input type="hidden" id="hfApiUrl" value="" />
+        <input type="hidden" id="hfCurrentDate" value="@DateTime.Now.ToString()" />
+        <input type="hidden" id="hfCompanyAddress" value=" " />
+        <input type="hidden" id="hfLoginFullName" value=" " />
+        <input type="hidden" id="hfLoginId" value=" " />
+        <input type="hidden" id="hfRoleId" value=" " />
+        <input type="hidden" id="hfOrganizationId" value=" " />
+
+        <input type="hidden" id="hfErpProductName" value=" " />
+
+
+        <!-- Footer closed -->
+    </div>
+    <!--end  Page -->
+    <!-- Back-to-top -->
+    <a href="#top" id="back-to-top"><i class="la la-chevron-up"></i></a>
+
+    <!-- Jquery js-->
+    <!-- Bootstrap js-->
+    <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Ionicons js-->
+    <script src="/assets/plugins/ionicons/ionicons.js"></script>
+
+    <!-- Moment js -->
+    <script src="/assets/plugins/moment/moment.js"></script>
+
+    <!-- P-scroll js -->
+    <script src="/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+
+    <!-- Rating js-->
+    <script src="/assets/plugins/rating/jquery.rating-stars.js"></script>
+    <script src="/assets/plugins/rating/jquery.barrating.js"></script>
+
+    <!-- Custom Scroll bar Js-->
+    <script src="/assets/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Horizontalmenu js-->
+    <script src="/assets/plugins/horizontal-menu/horizontal-menu.js"></script>
+
+    <!-- Right-sidebar js -->
+    <script src="/assets/plugins/sidebar/sidebar.js"></script>
+    <script src="/assets/plugins/sidebar/sidebar-custom.js"></script>
+
+    <!-- Sticky js-->
+    <script src="/assets/js/sticky.js"></script>
+
+    <!-- eva-icons js -->
+    <script src="/assets/js/eva-icons.min.js"></script>
+
+
+    <!-- Datepicker js -->
+    <script src="/assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+
+    <!--Chart bundle min js -->
+    <script src="/assets/plugins/chart.js/Chart.bundle.min.js"></script>
+    <script src="/assets/plugins/raphael/raphael.min.js"></script>
+    <script src="/assets/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- JQuery sparkline js -->
+    <script src="/assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sampledata js -->
+    <script src="/assets/js/chart.flot.sampledata.js"></script>
+
+    <!-- Perfect-scrollbar js -->
+    <script src="/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+
+    <!-- Internal  Flot js-->
+    <script src="/assets/plugins/jquery.flot/jquery.flot.js"></script>
+    <script src="/assets/plugins/jquery.flot/jquery.flot.pie.js"></script>
+    <script src="/assets/plugins/jquery.flot/jquery.flot.categories.js"></script>
+    <script src="/assets/js/dashboard.sampledata.js"></script>
+    <script src="/assets/js/chart.flot.sampledata.js"></script>
+
+    <!-- Internal Newsticker js-->
+    <script src="/assets/plugins/newsticker/jquery.jConveyorTicker.js"></script>
+    <script src="/assets/js/newsticker.js"></script>
+
+    <!-- Internal Nice-select js-->
+    <script src="/assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
+    <script src="/assets/plugins/jquery-nice-select/js/nice-select.js"></script>
+
+    <!-- index js -->
+    <script src="/assets/js/dashboard.js"></script>
+
+    <script src="/assets/js/modal.js"></script>
+    <!-- Custom js-->
+    <script src="/assets/js/custom.js"></script>
+
+    <!-- Switcher js -->
+    <script src="/assets/switcher/js/switcher.js"></script>
+
+</body>
+
+</html>
