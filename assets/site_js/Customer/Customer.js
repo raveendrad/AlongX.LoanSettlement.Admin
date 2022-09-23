@@ -63,9 +63,9 @@ function showData() {
 
                             actionButtons += '<button data-toggle="dropdown" class="btn ripple btn-dark table-button"><i class="fa fa-ellipsis-h"></i></button>';
                             actionButtons += '<div class="dropdown-menu">';
-                            actionButtons += '<a href="#"  class="dropdown-item" data-target="#save-item-modal" data-toggle="modal"><i class="fa fa-pen""></i>  View/Edit customer</a>';
+                            //actionButtons += '<a href="#"  class="dropdown-item" data-target="#save-item-modal" data-toggle="modal"><i class="fa fa-pen""></i>  View/Edit customer</a>';
                             actionButtons += '<a href="#" onclick=" deleteItem(' + data.customer_id + ')"  class="dropdown-item"><i class="fa fa-trash""></i>  Delete customer</a>';
-                            actionButtons += '<a href="#"  class="dropdown-item"><i class="fa fa-folder""></i>  Open Folder</a>';
+                            //actionButtons += '<a href="#"  class="dropdown-item"><i class="fa fa-folder""></i>  Open Folder</a>';
                             actionButtons += '</div>';
                             return actionButtons;
                         }
