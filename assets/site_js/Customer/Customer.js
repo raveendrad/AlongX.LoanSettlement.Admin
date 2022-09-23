@@ -64,8 +64,8 @@ function showData() {
 
                             actionButtons += '<button data-toggle="dropdown" class="btn ripple btn-dark table-button"><i class="fa fa-ellipsis-h"></i></button>';
                             actionButtons += '<div class="dropdown-menu">';
-                            actionButtons += '<a href="#"  class="dropdown-item" data-target="#save-item-modal" data-toggle="modal"><i class="fa fa-pen""></i>  View/Edit Outlet</a>';
-                            actionButtons += '<a href="#"  class="dropdown-item"><i class="fa fa-trash""></i>  Delete Outlet</a>';
+                            actionButtons += '<a href="#"  class="dropdown-item" data-target="#save-item-modal" data-toggle="modal"><i class="fa fa-pen""></i>  View/Edit customer</a>';
+                            actionButtons += '<a href="#" onclick=" deleteItem(' + data.customer_id + ')"  class="dropdown-item"><i class="fa fa-trash""></i>  Delete customer</a>';
                             actionButtons += '<a href="#"  class="dropdown-item"><i class="fa fa-folder""></i>  Open Folder</a>';
                             actionButtons += '</div>';
                             return actionButtons;
@@ -88,7 +88,7 @@ function showData() {
         }
     });
 }
-function saveItem() {
+/*function saveItem() {
     var id = $("#id").val();
     if (id == 0) {
         if (!isUserActionAuthorized("create", "outlet")) {
@@ -199,17 +199,13 @@ function editDialog(id) {
     $("#full_address").val($("#full_address_" + id + "").val());
     $("#manager").val($("#manager_" + id + "").val());
     $("#contact_number").val($("#contact_number_" + id + "").val());
-}
+}*/
 function deleteItem(id) {
-    if (!isUserActionAuthorized("delete", "outlets")) {
-        validationFailed("You are NOT authorized to perform this operation.");
-        return false;
-    }
-    var name = $("#name_" + id + "").val();
+    debugger;
 
     $.confirm({
         icon: 'fa fa-question',
-        title: '' + name + '!',
+        title:  '!',
         content: '<b style="color:red;">Deleting !</b><br>Are your sure you want to delete this outlet?',
         type: 'purple',
         typeAnimated: false,
@@ -219,19 +215,20 @@ function deleteItem(id) {
                 btnClass: 'btn-purple',
                 action: function () {
                     $.ajax({
-                        url: api_url + '/Outlet?id=' + id + '',
+                        url: api_url + 'http://localhost:51437/api/Customer?customer_id=' + id + '',
                         type: 'DELETE',
                         dataType: 'json',
                         contentType: "application/json; charset=utf-8",
                         beforeSend: function () {
-                            runLoader("#content_area", "Deleting '<b>" + name + "'</b>...");
+                           // runLoader("#content_area", "Deleting '<b>" + name + "'</b>...");
                         },
                         success: function (result) {
-                            stopLoader("#content_area");
+                           // stopLoader("#content_area");
                             if (result.status === true) {
-                                success("Successfully deleted the selected outlet '<b>" + name + "'");
+                                alert("Successfully deleted the selected customer '<b>" + id + "'");
+                                
                                 showData();
-                                saveActivityLog("Deleted the outlet - '" + name + "'", name);
+                                //saveActivityLog("Deleted the outlet - '" + name + "'", name);
                             }
                             else {
                                 error(result.message);
@@ -239,7 +236,7 @@ function deleteItem(id) {
                         },
                         error: function (XMLHttpRequest, textStatus, errorThrown) {
                             stopLoader("#content_area");
-                            error("Error on deleting the selected outlet '<b>" + item_name + "'</b>. Please try again.");
+                            alert("Error on deleting the selected customer '<b>" + id + "'</b>. Please try again.");
                         },
                         complete: function () {
                             stopLoader("#content_area");
@@ -253,12 +250,14 @@ function deleteItem(id) {
     });
 }
 function resetSaveItemFields() {
-    $("#id").val(0);
     $("#name").val("");
-    $("#locality").val("");
+    $("#gender").val("");
+    $("#mobile_number").val("");
     $("#full_address").val("");
-    $("#manager").val("");
-    $("#contact_number").val("");
+    $("#occupation").val("");
+    $("#state").val("");
+    $("#your_earning_per_month").val("");
+    
 }
 function indent_load() {
 
