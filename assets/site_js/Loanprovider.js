@@ -13,7 +13,6 @@ $(document).ready(function () {
 });
 
 function showData() {
-    debugger;
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -57,7 +56,7 @@ function showData() {
                             actionButtons += '<button data-toggle="dropdown" class="btn ripple btn-dark table-button"><i class="fa fa-ellipsis-h"></i></button>';
                             actionButtons += '<div class="dropdown-menu">';
                             actionButtons += '<a href="#" onclick="editDialog(' + data.loan_provider_id + ')"  class="dropdown-item" data-target="#save-item-modal" data-toggle="modal"><i class="fa fa-pen""></i>  View/Edit loanprovider</a>';
-                            actionButtons += '<a href="#" onclick=" deleteItem(' + data.customer_id + ')"  class="dropdown-item"><i class="fa fa-trash""></i>  Delete customer</a>';
+                            actionButtons += '<a href="#" onclick=" deleteItem(' + data.loan_provider_id + ')"  class="dropdown-item"><i class="fa fa-trash""></i>  Delete customer</a>';
                          actionButtons += '</div>';
                             return actionButtons;
                         }
@@ -71,11 +70,9 @@ function showData() {
             });
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            //stopLoader("#content_area");
             error("Error on listing outlets. Please try again.");
         },
         complete: function () {
-            //stopLoader("#content_area");
         }
     });
 }
@@ -93,8 +90,8 @@ function save() {
     var isValidationPassed = true;
     if (loan_provider_name.trim() == "") {
         isValidationPassed = false;
-        //validationFailed("LoanProvider Name is mandatory..", "save-item-modal-body");
-        //$("#loan_provider_name").focus();
+        validationFailed("LoanProvider Name is mandatory..", "save-item-modal-body");
+        $("#loan_provider_name").focus();
     }
     else if (loan_platform == "") {
         isValidationPassed = false;
@@ -118,7 +115,6 @@ function save() {
     }
 
     if (isValidationPassed == true) {
-        debugger;
         var requestData =
         {
             "loan_provider_id": loan_provider_id,
@@ -128,7 +124,6 @@ function save() {
             "additional_discount_to_settlement": additional_discount_to_settlement,
             "special_comments": special_comments
         };
-        debugger;
         var jsonData = JSON.stringify(requestData);
         $.ajax({
 
@@ -221,7 +216,7 @@ function deleteItem(id) {
                         },
                         error: function (XMLHttpRequest, textStatus, errorThrown) {
                             stopLoader("#content_area");
-                            alert("Error on deleting the selected customer '<b>" + id    + "'</b>. Please try again.");
+                            alert("Error on deleting the selected loanprovider '<b>" + id    + "'</b>. Please try again.");
                         },
                         complete: function () {
                             stopLoader("#content_area");

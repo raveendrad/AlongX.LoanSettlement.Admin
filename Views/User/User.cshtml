@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<script src="~/assets/site_js/User.js"></script>
+
+
+<div class="breadcrumb-header justify-content-between">
+    <div class="left-content">
+        <h3 class="content-title mb-2">User &nbsp;&nbsp;</h3>
+        <div class="d-flex">
+            <i class="mdi mdi-home text-muted hover-cursor"></i>
+            <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;User&nbsp;/&nbsp;</p>
+            <p class="text-primary mb-0 hover-cursor"></p>
+        </div>
+    </div>
+    <div class="d-flex align-items-end flex-wrap my-auto right-content breadcrumb-right">
+        <p id="applied_filter_range_shower" style="margin-bottom: 0.2rem !important; padding-right:10px;"></p>
+        <button class="btn btn-success btn-rounded btn-sm" onclick="resetSaveItemFields()" data-target="#save-item-modal" data-toggle="modal"> <i class="mdi mdi-plus icon_bold"></i>New User</button>
+    </div>
+</div>
+<!-- /breadcrumb -->
+
+<div class="row" id="content_area">
+    <div class="col-md-12">
+        <div class="card overflow-hidden">
+            <div class="card-body" style="background-color: #E5F6F3;">
+                <div class="table-responsive market-values">
+                    <table id="user-table">
+                        <thead>
+                            <tr>
+                                <th class="no-sort" width="10%">LOGIN ID</th>
+                                <th class="no-sort" width="20%">USER FULL NAME</th>
+                                <th class="no-sort" width="10%">ROLE</th>
+                                <th class="no-sort" width="10%">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal show" id="save-item-modal" style="display: none; padding-right: 4px; " aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">User</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body" id="save-item-modal-body">
+                <div class="row">
+
+                    <input type="hidden" id="user_id" />
+
+                    @*<div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">USER ID <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="user_id">
+                    </div>*@
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">LOGIN ID <span style="color:#ff0000">*</span></label>
+                        <textarea class="form-control" placeholder="" id="login_id"></textarea>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">USER FULL NAME <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="user_full_name">
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <label class="form-control-label">ROLE <span style="color:#ff0000">*</span></label>
+                        <input class="form-control" placeholder="" type="text" id="role">
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn ripple btn-success btn-rounded" type="button" id="btnSave">Save</button>
+                <button class="btn btn-outline-secondary btn-rounded" data-dismiss="modal" type="button" id="btnClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
