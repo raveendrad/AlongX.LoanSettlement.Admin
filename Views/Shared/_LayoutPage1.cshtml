@@ -94,8 +94,8 @@
                 <div class="main-header-left ">
                     <a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a><!-- sidebar-toggle-->
                     <a class="header-brand" href="~/app/dashboard">
-                        <img src="/assets/img/brand/alongx-logo-web.jpg" class="desktop-dark">
-                        <img src="/assets/img/brand/alongx-logo-web.jpg" class="desktop-logo" alt="billzen logo">
+                        <img src="~/assets/img/brand/confirm-logo.png" width="100" height="20" class="desktop-dark">
+                        <img src="~/assets/img/brand/confirm-logo.png" width="150" height="20" class="desktop-logo" alt="billzen logo">
                     </a>
                    @* <span class="product_label"><span>O</span>rder</span>*@
                 </div>
@@ -105,7 +105,7 @@
                         <img src="~/assets/img/brand/alongx-logo-web.jpg" class="dark-mobile-logo" alt="billzen logo">
                     </div>
                     <div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
-                        <h5 style="text-align:right; color:#fbfbfb; font-weight:bold; padding-top:7px;">xyz</h5>
+                        <h5 style="text-align:right; color:#fbfbfb; font-weight:bold; padding-top:7px;">Administrator</h5>
                     </div>
                 </div>
                 <div class="main-header-right">
@@ -132,23 +132,23 @@
                         <div class="nav-item main-header-message ">
                             <a class="new nav-link " href="#" target="_blank"><i class="ti-help"></i></a>
                         </div>
-                        <div class="nav-item main-header-notification">
+                        @*<div class="nav-item main-header-notification">
                             <a class="new nav-link " href="~/app/notifications"><i class="ti-bell animated bell-animations"></i><span class=" pulse"></span></a>
 
-                        </div>
+                        </div>*@
                         <button class="navbar-toggler navresponsive-toggler d-sm-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
                                 aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon fe fe-more-vertical "></span>
                         </button>
                         <div class="dropdown main-profile-menu nav nav-item nav-link" style="margin-top:3px;">
                             <a class="profile-user" href="#">
-                                <div class="avatar avatar-sm brround mx-auto bg-primary" style="color:#fbfbfb">xyz</div>
+                                <div class="avatar avatar-sm brround mx-auto bg-primary" style="color:#fbfbfb">A</div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
                                 <div class="main-header-profile header-img">
-                                    <div class="main-img-user avatar avatar-lg brround mx-auto bg-dark">jjj</div>
-                                    <h6>xvg</h6>
-                                    <span>jji</span>
+                                    <div class="main-img-user avatar avatar-lg brround mx-auto bg-dark">A</div>
+                                    <h6>Administor</h6>
+                                    @*<span>jji</span>*@
                                     <span style="font-style:italic">login timre</span>
                                 </div>
                                 <a class="dropdown-item" href="~/app/my_profile"><i class="far fa-user"></i> My Profile</a>
@@ -228,7 +228,7 @@
                     <!--Nav-->
                     <nav class="horizontalMenu clearfix">
                         <ul class="horizontalMenu-list">
-                            <li aria-haspopup="false"><a href="~/app/dashboard" class=""><i class="fa fa-home" style="margin-right:0px !important"></i></a></li>
+                           @* <li aria-haspopup="false"><a href="~/app/dashboard" class=""><i class="fa fa-home" style="margin-right:0px !important"></i></a></li>*@
                             <!--<li aria-haspopup="true">
                                 <a href="#" class="sub-icon"><i class="fa fa-cogs"></i> App Settings <i class="fe fe-chevron-down horizontal-icon"></i></a>
                                 <ul class="sub-menu">-->
@@ -251,7 +251,7 @@
                                 </ul>
                             </li>*@
                             <li>
-                                <a class="sub-icon" href="~/Customer/Customer"><i class="fa fa-gift"></i> Customers </a>
+                                <a class="sub-icon" href="~/Customer/Customer"><i class="fa fa-users" aria-hidden="true"></i> Customers </a>
                             </li>
                            @*<li>
                                 <a class="sub-icon" href="~/reports/report_and_analytics"><i class="fa fa-chart-bar"></i> Reports & Analytics </a>

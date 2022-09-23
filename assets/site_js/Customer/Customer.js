@@ -14,7 +14,6 @@ $(document).ready(function () {
 });
 
 function showData() {
-    debugger;
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -201,8 +200,6 @@ function editDialog(id) {
     $("#contact_number").val($("#contact_number_" + id + "").val());
 }*/
 function deleteItem(id) {
-    debugger;
-
     $.confirm({
         icon: 'fa fa-question',
         title:  '!',
@@ -225,7 +222,7 @@ function deleteItem(id) {
                         success: function (result) {
                            // stopLoader("#content_area");
                             if (result.status === true) {
-                                alert("Successfully deleted the selected customer '<b>" + id + "'");
+                                //alert("Successfully deleted the selected customer '<b>" + id + "'");
                                 
                                 showData();
                                 //saveActivityLog("Deleted the outlet - '" + name + "'", name);
